@@ -1,0 +1,49 @@
+@baseColor: teal;
+@smallFontSize: 10px;
+@baseFontSize: 15px;
+@largeFontSize: 25px;
+
+.medium {
+  height: 30px;
+  font-size: @baseFontSize;
+}
+
+.small {
+  font-size: @smallFontSize;
+}
+
+.large {
+  font-size: @largeFontSize;
+}
+
+.flexed {
+  display: flex;
+}
+
+.justifyed {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.centred {
+  justify-content: center;
+  align-items: center;
+}
+
+.columned {
+  flex-direction: column;
+}
+
+.aligned {
+  align-items: center;
+}
+
+.outlined {
+  outline: 2px solid @baseColor;
+  border-radius: 3px
+}
+
+.bordered {
+  border: 2px solid @baseColor;
+  border-radius: 3px
+}

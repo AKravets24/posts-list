@@ -1,30 +1,42 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="container">
+    <nav-bar/>
+    <router-view/>
+
+  </div>
+
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import NavBar from "@/frontend/pages/navbar/NavBar";
 
-nav {
-  padding: 30px;
+  export default {
+      components: {
+          NavBar
+      },
+      mounted() {
+          console.log(this.$route.path)
+          if (!this.$route.path || this.$route.path === '/') {
+              this.$router.push('/posts')
+          }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+      }
   }
-}
+
+</script>
+
+<style lang="less">
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 100%;
+    min-height: 99vh;
+    margin: 0 auto;
+  }
+
 </style>
